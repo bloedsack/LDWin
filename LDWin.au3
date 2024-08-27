@@ -1,5 +1,3 @@
-#NoTrayIcon
-#RequireAdmin
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=network.ico
 #AutoIt3Wrapper_Outfile=LDWin.exe
@@ -11,9 +9,22 @@
 #AutoIt3Wrapper_Res_Field=ProductName|LDWin
 #AutoIt3Wrapper_Res_Field=ProductVersion|2.2
 #AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
+#AutoIt3Wrapper_Res_Field=ProductName|LDWin
+#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
+#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
+#AutoIt3Wrapper_Res_Field=ProductName|LDWin
+#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
+#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
+#AutoIt3Wrapper_Res_Field=ProductName|LDWin
+#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
+#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
 #AutoIt3Wrapper_Run_AU3Check=n
 #AutoIt3Wrapper_AU3Check_Parameters=-d -w 1 -w 2 -w 3 -w 4 -w 5 -w 6
+#AutoIt3Wrapper_Tidy_Stop_OnError=n
+#AutoIt3Wrapper_Run_Au3Stripper=y
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
+#NoTrayIcon
+#RequireAdmin
 ;===================================================================================================================================================================
 ; LDWin - Link Discovery for Windows - Chris Hall 2010-2015
 ;===================================================================================================================================================================
@@ -155,7 +166,7 @@ Func GetCDP($Nic_Friendly)
 	$ID = $IData[2][1]
 
 	;******** DIAG MODE ********
-	$TCPDmpPID = Run(@ComSpec & " /c " & @TempDir & '\tcpdump.exe -i \Device\' & $ID & ' -nn -v -s 1500 -c 1 (ether[12:2]==0x88cc or ether[20:2]==0x2000) >%temp%\Data_Out.txt', "", @SW_HIDE)
+	$TCPDmpPID = Run(@ComSpec & " /c " & @TempDir & "\tcpdump.exe -i \Device\" & "NPF_" & $ID & " -nn -v -s 1500 -c 1 (ether[12:2]==0x88cc or ether[20:2]==0x2000) >%temp%\Data_Out.txt", "", @SW_HIDE)
 	;$TCPDmpPID = "0"
 	;******** DIAG MODE ********
 	$Secs = 1
@@ -272,9 +283,9 @@ Func GetCDP($Nic_Friendly)
 			If StringInStr(FileReadLine($file, $line), "Port Description TLV (4)") Then
 				$SwitchPort = StringSplit(FileReadLine($file, $line), ":")
 				$SwitchPort = StringStripWS($SwitchPort[2], 3)
-				GUICtrlCreateLabel("", 140, 213, 120, 20)
-				GUICtrlCreateLabel($SwitchPort, 140, 213, 120, 40)
-				FileWriteLine($SaveFile, "Switch Port:	" & $SwitchPort)
+				#GUICtrlCreateLabel("", 140, 213, 120, 20)
+				#GUICtrlCreateLabel($SwitchPort, 140, 213, 120, 40)
+				FileWriteLine($SaveFile, "Switch Description:	" & $SwitchPort)
 			EndIf
 			If StringInStr(FileReadLine($file, $line), "port vlan id (PVID)") Then
 				$VLAN = StringSplit(FileReadLine($file, $line), ":")
