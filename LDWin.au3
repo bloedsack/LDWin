@@ -9,15 +9,6 @@
 #AutoIt3Wrapper_Res_Field=ProductName|LDWin
 #AutoIt3Wrapper_Res_Field=ProductVersion|2.2
 #AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
-#AutoIt3Wrapper_Res_Field=ProductName|LDWin
-#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
-#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
-#AutoIt3Wrapper_Res_Field=ProductName|LDWin
-#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
-#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
-#AutoIt3Wrapper_Res_Field=ProductName|LDWin
-#AutoIt3Wrapper_Res_Field=ProductVersion|2.2
-#AutoIt3Wrapper_Res_Field=OriginalFileName|LDWin.exe
 #AutoIt3Wrapper_Run_AU3Check=n
 #AutoIt3Wrapper_AU3Check_Parameters=-d -w 1 -w 2 -w 3 -w 4 -w 5 -w 6
 #AutoIt3Wrapper_Tidy_Stop_OnError=n
